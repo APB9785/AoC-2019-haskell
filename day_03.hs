@@ -3,29 +3,22 @@ import Data.Text (Text, pack, unpack, split, strip)
 import qualified Data.HashSet as HashSet
 import qualified Data.HashMap.Strict as HashMap
 
--- PART 2:
--- Pass a "time" counter throughout the makePath.
--- Expand the travel function to add the time as value in a map.
--- Implement HashMap instead of HashSet - filter the map
--- Replace sumTuple with extraction of value from the map.
-
 main = do
-    --contents <- readFile "example.txt"
     contents <- readFile "input.txt"
 
     putStr formatOutputHeader
+    
+    let (a, b) = parseInput contents
 
     -- PART 1
-
-    let (a, b) = parseInput contents
 
     let stateA1 = makePath a
     let stateB1 = makePath b
 
-    HashSet.filter (\n -> HashSet.member n stateA1) stateB1 &
-      HashSet.map sumTuple &
-      minimum &
-      print
+    HashSet.filter (\n -> HashSet.member n stateA1) stateB1
+      & HashSet.map sumTuple
+      & minimum
+      & print
 
     -- PART 2
 
