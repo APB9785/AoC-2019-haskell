@@ -9,7 +9,7 @@ main = do
     let initialState = makeIndex $ splitCSV contents
         
     runProgram 1 initialState
-      & last
+      & head
       & print
 
     putStr "\nPart 2:  "
@@ -76,7 +76,7 @@ runProgram inputVal m = go 0 m []
                  (runEquals idx mem mode1 mode2)
                  output
         -- Halt: ends the program and returns held values for printing
-        99 -> reverse output
+        99 -> output
 
 parseInstruction :: Int -> (Int, Int, Int, Int)
 parseInstruction n =
