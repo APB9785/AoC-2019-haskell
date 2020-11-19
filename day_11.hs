@@ -80,10 +80,12 @@ stepForward x y d =
       "S" -> (x,   y-1)
       "W" -> (x-1, y  )
 
+-- Loops through x-values 0 to 41 and y-values 1 to -7, appending each to a String.
+-- x and y limits were found through trial and error.
 printHull :: Hash.HashMap (Int, Int) Int -> String
 printHull h = go 0 1 []
     where
-      go x  (-7) done = List.reverse done
+      go x  (-7)  done = List.reverse done
       go 41 y     done = go (0) (y-1) ('\n':done)
       go x  y     done = 
         if   (x, y) `Hash.member` h
