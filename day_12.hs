@@ -1,6 +1,5 @@
 import Data.Function
 
-data Vector = Position Int Int Int | Velocity Int Int Int
 data Moon = Moon { posX :: Int
                  , posY :: Int
                  , posZ :: Int
