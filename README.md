@@ -4,7 +4,12 @@
 Parts 1 & 2: Create [IntCode](https://esolangs.org/wiki/Intcode) Virtual Machine, which will be used for all future odd-numbered days 
 
 ### Day 10
+Part 1: Geometry & List processing  
 Part 2: Trigonometry
+
+### Day 11
+Part 1: IntCode VM state persistence  
+Part 2: Display procedurally generated ASCII art
 
 ### Day 12
 Part 1: Simple physics simulation  
